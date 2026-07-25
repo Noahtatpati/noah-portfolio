@@ -26,7 +26,7 @@ export function Header() {
   const navLinks = [
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Resume', href: '#resume' },
+    { label: 'Resume', href: 'https://drive.google.com/drive/folders/1PnS1XSy558C5zcom8Vrm1wwhm0yk1qrz?usp=sharing', external: true },
   ];
 
   return (
@@ -50,7 +50,7 @@ export function Header() {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="text-sm font-medium text-base-500 hover:text-base-950 transition-colors duration-200">
+              <a key={link.label} href={link.href} {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})} className="text-sm font-medium text-base-500 hover:text-base-950 transition-colors duration-200">
                 {link.label}
               </a>
             ))}
@@ -102,6 +102,7 @@ export function Header() {
                 <motion.a
                   key={link.label}
                   href={link.href}
+                  {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})}
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
