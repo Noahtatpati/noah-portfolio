@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Archivo, Space_Grotesk } from 'next/font/google';
+import { PageLoader } from '@/components/PageLoader';
 import './globals.css';
 
 const archivo = Archivo({
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body><PageLoader>{children}</PageLoader></body>
     </html>
   );
 }
