@@ -57,7 +57,9 @@ export default function HomePage() {
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://drive.google.com/drive/folders/1PnS1XSy558C5zcom8Vrm1wwhm0yk1qrz?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-base-300 text-base-800 rounded-full text-sm font-semibold hover:border-base-400 hover:bg-base-100 transition-colors duration-200"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
