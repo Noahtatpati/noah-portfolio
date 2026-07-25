@@ -32,6 +32,7 @@ export default function ConnectPage() {
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const handleCopy = (text: string, idx: number) => {
     navigator.clipboard.writeText(text);
@@ -146,7 +147,25 @@ export default function ConnectPage() {
                       </div>
                     </div>
 
-                    <form onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:nmtatpati@gmail.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`; }} className="space-y-4">
+                    <form onSubmit={async (e) => {
+                      e.preventDefault();
+                      setStatus('sending');
+                      try {
+                        const res = await fetch('https://api.web3forms.com/submit', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            access_key: 'c3bf344d-1e1c-42d2-89be-a6992f42ce8e',
+                            name: form.name,
+                            email: form.email,
+                            subject: form.subject,
+                            message: form.message,
+                          }),
+                        });
+                        if (res.ok) { setStatus('sent'); setForm({ name: '', email: '', subject: '', message: '' }); }
+                        else { setStatus('error'); }
+                      } catch { setStatus('error'); }
+                    }} className="space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-semibold text-base-600 mb-1.5">Your Name</label>
@@ -191,11 +210,18 @@ export default function ConnectPage() {
                       </div>
                       <button
                         type="submit"
-                        className="w-full py-3 bg-accent text-white rounded-xl text-sm font-semibold hover:bg-accent-dark transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                        disabled={status === 'sending'}
+                        className="w-full py-3 bg-accent text-white rounded-xl text-sm font-semibold hover:bg-accent-dark transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        Send Message
+                        {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : 'Send Message'}
                         <ArrowUpRight size={14} />
                       </button>
+                      {status === 'sent' && (
+                        <p className="text-center text-xs text-green-600 font-medium">Message sent! I&apos;ll get back to you soon.</p>
+                      )}
+                      {status === 'error' && (
+                        <p className="text-center text-xs text-red-500 font-medium">Something went wrong. Please try again.</p>
+                      )}
                       <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-base-400">
                         <Shield size={12} />
                         Your information is safe with me. I respect your privacy.
