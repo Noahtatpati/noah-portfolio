@@ -2,23 +2,22 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, ChevronDown, Send, ArrowUpRight, Shield } from 'lucide-react';
+import { ChevronDown, ArrowUpRight, Shield } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { FadeIn } from '@/components/Motion';
-import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 import Image from 'next/image';
 
 const contactInfo = [
-  { icon: Mail, label: 'EMAIL', value: 'nmtatpati@gmail.com', copyable: true },
-  { icon: Phone, label: 'PHONE', value: '+91 94828 04733', copyable: true },
-  { icon: MapPin, label: 'LOCATION', value: 'Hubballi, Karnataka, India', copyable: true },
-  { icon: Clock, label: 'AVAILABILITY', value: 'Open for Internships & Full-time Opportunities', badge: 'Available', copyable: true },
+  { label: 'EMAIL', value: 'nmtatpati@gmail.com' },
+  { label: 'PHONE', value: '+91 94828 04733' },
+  { label: 'LOCATION', value: 'Hubballi, Karnataka, India' },
+  { label: 'AVAILABILITY', value: 'Open for Internships & Full-time Opportunities', badge: 'Available' },
 ];
 
 const socialLinks = [
-  { icon: GithubIcon, label: 'GitHub', href: 'https://github.com/Noahtatpati' },
-  { icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/noah-tatpati/' },
-  { icon: Mail, label: 'Email', href: 'mailto:nmtatpati@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/Noahtatpati' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/noah-tatpati/' },
+  { label: 'Email', href: 'mailto:nmtatpati@gmail.com' },
 ];
 
 const faqs = [
@@ -29,16 +28,9 @@ const faqs = [
 ];
 
 export default function ConnectPage() {
-  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-
-  const handleCopy = (text: string, idx: number) => {
-    navigator.clipboard.writeText(text);
-    setCopiedIdx(idx);
-    setTimeout(() => setCopiedIdx(null), 1500);
-  };
 
   return (
     <>
@@ -66,35 +58,17 @@ export default function ConnectPage() {
 
               <FadeIn direction="up" delay={0.1}>
                 <div className="space-y-3 mb-8">
-                  {contactInfo.map((item, idx) => (
-                    <div key={item.label} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white border border-base-200 rounded-xl">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                        <item.icon size={18} />
+                  {contactInfo.map((item) => (
+                    <div key={item.label} className="p-3 sm:p-4 bg-white border border-base-200 rounded-xl">
+                      <p className="text-[10px] sm:text-xs font-semibold text-base-400 uppercase tracking-wider mb-1">{item.label}</p>
+                      <div className="flex items-center gap-2">
+                        <p className="text-xs sm:text-sm text-base-900 font-medium">{item.value}</p>
+                        {item.badge && (
+                          <span className="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] sm:text-xs font-semibold rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-[10px] sm:text-xs font-semibold text-base-400 uppercase tracking-wider mb-0.5">{item.label}</p>
-                        <div className="flex items-center gap-2">
-                          <p className="text-xs sm:text-sm text-base-900 font-medium truncate">{item.value}</p>
-                          {item.badge && (
-                            <span className="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] sm:text-xs font-semibold rounded-full whitespace-nowrap">
-                              {item.badge}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      {item.copyable && (
-                        <button
-                          onClick={() => handleCopy(item.value, idx)}
-                          className="text-base-300 hover:text-base-500 transition-colors shrink-0 cursor-pointer"
-                          aria-label="Copy"
-                        >
-                          {copiedIdx === idx ? (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                          ) : (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-                          )}
-                        </button>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -111,7 +85,6 @@ export default function ConnectPage() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-base-200 rounded-xl text-xs sm:text-sm font-medium text-base-700 hover:border-accent hover:text-accent transition-colors duration-200"
                     >
-                      <link.icon size={16} />
                       {link.label}
                       <ArrowUpRight size={12} className="text-base-300" />
                     </a>
@@ -137,14 +110,9 @@ export default function ConnectPage() {
               <FadeIn direction="up" delay={0.15}>
                 <div className="bg-white border border-base-200 rounded-2xl shadow-sm overflow-hidden mb-5">
                   <div className="p-5 sm:p-6">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                        <Send size={18} />
-                      </div>
-                      <div>
-                        <h2 className="font-heading text-base sm:text-lg font-bold text-base-950 m-0">Send me a message</h2>
-                        <p className="text-xs text-base-400 m-0">I&apos;ll get back to you as soon as possible.</p>
-                      </div>
+                    <div className="mb-5">
+                      <h2 className="font-heading text-base sm:text-lg font-bold text-base-950 m-0">Send me a message</h2>
+                      <p className="text-xs text-base-400 m-0">I&apos;ll get back to you as soon as possible.</p>
                     </div>
 
                     <form onSubmit={async (e) => {
