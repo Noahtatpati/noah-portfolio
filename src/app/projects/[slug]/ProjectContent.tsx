@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowUpRight, ExternalLink, Lightbulb, List, Map, Target, Tr
 import { GithubIcon } from '@/components/Icons';
 import { getProjectBySlug } from '@/data/portfolio';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+
 import { FadeIn, Stagger, StaggerChild } from '@/components/Motion';
 
 export function ProjectContent({ slug }: { slug: string }) {
@@ -25,7 +25,6 @@ export function ProjectContent({ slug }: { slug: string }) {
             </Link>
           </div>
         </main>
-        <Footer />
       </>
     );
   }
@@ -283,8 +282,6 @@ export function ProjectContent({ slug }: { slug: string }) {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
