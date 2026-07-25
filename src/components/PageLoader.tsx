@@ -34,7 +34,7 @@ export function PageLoader({ children }: { children: React.ReactNode }) {
                 ease: 'easeInOut',
               }}
             >
-              <Image src="/assets/logo.png" alt="Loading" width={64} height={64} className="rounded-xl" />
+              <Image src="/assets/logo.png" alt="Loading" width={96} height={96} className="rounded-xl" />
             </motion.div>
           </motion.div>
         )}
