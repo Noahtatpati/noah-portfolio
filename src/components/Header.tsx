@@ -42,12 +42,12 @@ export function Header() {
         transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.png" alt="Logo" width={24} height={24} className="rounded sm:w-7 sm:h-7" />
             <span className="font-heading text-xs sm:text-sm font-bold tracking-tight text-base-950 uppercase">
               Noah Tatpati
             </span>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})} className="text-sm font-medium text-base-500 hover:text-base-950 transition-colors duration-200">
