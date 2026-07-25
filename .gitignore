@@ -19,5 +19,26 @@ out/
 # debug
 npm-debug.log*
 
+# db files
+.freebuff/
+
+# legacy root images
+Bireena/
+TrustNow/
+cadence/
+desq/
+
+# reference files
+projects.md
+resume.md
+
+# unused components
+src/components/Footer.tsx
+src/components/ProjectCard.tsx
+src/components/SectionHeading.tsx
+
+# unused images
+public/assets/images/desq/
+
 # vercel
 .vercel
