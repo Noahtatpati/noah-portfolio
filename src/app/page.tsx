@@ -15,7 +15,7 @@ type Tab = (typeof experienceTabs)[number];
 
 const techStack = [
   'Python', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js',
-  'Tailwind CSS', 'PostgreSQL', 'Firebase', 'LangChain',
+  'Tailwind CSS', 'PostgreSQL', 'Supabase', 'MongoDB', 'FastAPI', 'LangChain',
   'OpenAI API', 'Git', 'Docker'
 ];
 

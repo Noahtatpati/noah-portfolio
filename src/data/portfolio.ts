@@ -45,7 +45,7 @@ export const resume = {
   skills: {
     technical: ['Prompt Engineering', 'LLMs', 'AI Agents', 'Software Engineering', 'Data Analysis'],
     programming: ['Python', 'JavaScript', 'SQL'],
-    tools: ['Git', 'GitHub', 'Streamlit', 'VS Code', 'Firebase', 'SQLite']
+    tools: ['Git', 'GitHub', 'Streamlit', 'VS Code', 'Supabase', 'MongoDB', 'SQLite']
   },
   experience: [
     {
@@ -107,11 +107,11 @@ export const projects: Project[] = [
     ],
     technologies: [
       { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
-      { category: 'Backend', items: ['Firebase'] },
+      { category: 'Backend', items: ['FastAPI'] },
       { category: 'AI', items: ['OpenAI APIs', 'Prompt Engineering', 'Computer Vision'] },
       { category: 'Maps', items: ['Leaflet'] }
     ],
-    techList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'OpenAI APIs', 'Prompt Engineering', 'Computer Vision', 'Leaflet'],
+    techList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'OpenAI APIs', 'Prompt Engineering', 'Computer Vision', 'Leaflet'],
     challenges: [
       { problem: 'Integrating multiple AI models for different detection tasks (scam, counterfeit, fraud) required managing different response formats and latency profiles.', solution: 'Built a unified AI orchestration layer that normalizes responses and handles timeouts gracefully, with fallback mechanisms for each detection module.' },
       { problem: 'Rendering real-time threat locations on a map while maintaining performance across thousands of data points.', solution: 'Used Leaflet with marker clustering and viewport-based rendering to keep the map responsive regardless of data volume.' }
@@ -149,10 +149,11 @@ export const projects: Project[] = [
     ],
     technologies: [
       { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
+      { category: 'Backend', items: ['FastAPI'] },
       { category: 'AI', items: ['OpenAI'] },
       { category: 'Database', items: ['SQLite'] }
     ],
-    techList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'SQLite'],
+    techList: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'OpenAI', 'SQLite'],
     challenges: [
       { problem: 'Processing long audio recordings with accurate transcription required handling files that exceeded API context limits.', solution: 'Implemented chunked audio processing with overlapping segments to ensure no content was lost during transcription.' },
       { problem: 'Generating coherent summaries from segmented transcripts without losing narrative flow.', solution: 'Designed a hierarchical summarization pipeline that first summarizes chunks, then synthesizes them into a final summary.' }
@@ -189,16 +190,16 @@ export const projects: Project[] = [
     ],
     technologies: [
       { category: 'Frontend', items: ['React', 'TypeScript', 'Tailwind CSS'] },
-      { category: 'Backend', items: ['Firebase'] }
+      { category: 'Backend', items: ['Supabase', 'MongoDB'] }
     ],
-    techList: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    techList: ['React', 'TypeScript', 'Supabase', 'MongoDB', 'Tailwind CSS'],
     challenges: [
       { problem: 'Laboratory staff needed to upload reports in bulk while maintaining patient-data associations.', solution: 'Built a batch upload flow with drag-and-drop and automatic metadata extraction from filenames.' },
       { problem: 'Different laboratories used different report formats, making standardization difficult.', solution: 'Created a flexible template system that administrators could configure per laboratory.' }
     ],
     lessons: [
       'Working with real healthcare data required careful attention to privacy and access control.',
-      'Firebase\'s real-time updates were useful for the dashboard but required thoughtful data structuring to avoid excessive reads.',
+      'Supabase\'s real-time updates were useful for the dashboard but required thoughtful data structuring to avoid excessive reads.',
       'User feedback from lab technicians directly shaped the upload workflow to minimize clicks per report.'
     ],
     image: '/assets/images/bireena/dashboard.png',
