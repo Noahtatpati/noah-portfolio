@@ -55,7 +55,7 @@ export function Header() {
               </a>
             ))}
             <motion.a
-              href="mailto:nmtatpati@gmail.com"
+              href="/connect"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white rounded-full text-sm font-semibold hover:bg-accent-dark transition-colors duration-200"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -114,7 +114,7 @@ export function Header() {
                 </motion.a>
               ))}
               <motion.a
-                href="mailto:nmtatpati@gmail.com"
+                href="/connect"
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
