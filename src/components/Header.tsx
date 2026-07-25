@@ -2,11 +2,14 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isConnect = pathname === '/connect';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -48,43 +51,47 @@ export function Header() {
               Noah Tatpati
             </span>
           </a>
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href} {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})} className="text-sm font-medium text-base-500 hover:text-base-950 transition-colors duration-200">
-                {link.label}
-              </a>
-            ))}
-            <motion.a
-              href="/connect"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white rounded-full text-sm font-semibold hover:bg-accent-dark transition-colors duration-200"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Let's Connect
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </motion.a>
-          </nav>
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
-            aria-label="Toggle menu"
-          >
-            <motion.span
-              className="w-5 h-0.5 bg-base-900 block"
-              animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-              transition={{ duration: 0.2 }}
-            />
-            <motion.span
-              className="w-5 h-0.5 bg-base-900 block"
-              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              transition={{ duration: 0.1 }}
-            />
-            <motion.span
-              className="w-5 h-0.5 bg-base-900 block"
-              animate={mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-              transition={{ duration: 0.2 }}
-            />
-          </button>
+          {!isConnect && (
+            <>
+              <nav className="hidden md:flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <a key={link.label} href={link.href} {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})} className="text-sm font-medium text-base-500 hover:text-base-950 transition-colors duration-200">
+                    {link.label}
+                  </a>
+                ))}
+                <motion.a
+                  href="/connect"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white rounded-full text-sm font-semibold hover:bg-accent-dark transition-colors duration-200"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Let's Connect
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </motion.a>
+              </nav>
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
+                aria-label="Toggle menu"
+              >
+                <motion.span
+                  className="w-5 h-0.5 bg-base-900 block"
+                  animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+                <motion.span
+                  className="w-5 h-0.5 bg-base-900 block"
+                  animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                  transition={{ duration: 0.1 }}
+                />
+                <motion.span
+                  className="w-5 h-0.5 bg-base-900 block"
+                  animate={mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </button>
+            </>
+          )}
         </div>
       </motion.header>
 
