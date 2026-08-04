@@ -21,16 +21,14 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Noah Mohandas Tatpati | Portfolio',
   description:
-    'Portfolio of Noah Mohandas Tatpati — AI developer specializing in generative AI, LLM applications, and engineering-driven product experiences.',
-  other: {
-    'google-site-verification': 'fAuRINdWck1ecdsRk1FFxepjBpM1V49vUAjb_sTw-Jo',
-  },
+    'Portfolio of Noah Mohandas Tatpati — AI developer specializing in generative AI, LLM applications, and engineering-driven product experiences.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <meta name="google-site-verification" content="fAuRINdWck1ecdsRk1FFxepjBpM1V49vUAjb_sTw-Jo" />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
