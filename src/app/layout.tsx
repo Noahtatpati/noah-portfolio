@@ -21,7 +21,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Noah Mohandas Tatpati | Portfolio',
   description:
-    'Portfolio of Noah Mohandas Tatpati — AI developer specializing in generative AI, LLM applications, and engineering-driven product experiences.'
+    'Portfolio of Noah Mohandas Tatpati — AI developer specializing in generative AI, LLM applications, and engineering-driven product experiences.',
+  other: {
+    'google-site-verification': 'fAuRINdWck1ecdsRk1FFxepjBpM1V49vUAjb_sTw-Jo',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
