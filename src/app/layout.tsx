@@ -113,6 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
       <head>
         <meta name="google-site-verification" content="fAuRINdWck1ecdsRk1FFxepjBpM1V49vUAjb_sTw-Jo" />
+        <meta name="msvalidate.01" content="81458CE44842E123E3A495E0F7ADB724" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
