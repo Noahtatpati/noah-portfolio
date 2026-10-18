@@ -14,9 +14,11 @@ const experienceTabs = ['Experience', 'Skills', 'Education', 'Achievements'] as 
 type Tab = (typeof experienceTabs)[number];
 
 const techStack = [
-  'Python', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js',
-  'Tailwind CSS', 'PostgreSQL', 'Supabase', 'MongoDB', 'FastAPI', 'LangChain',
-  'OpenAI API', 'Git', 'Docker'
+  'ChatGPT', 'Claude', 'Gemini', 'OpenCode',
+  'Prompt Writing', 'Instruction Design', 'Prompt Iteration',
+  'Generative AI', 'Chatbots', 'AI Assistants',
+  'Python', 'JavaScript', 'SQL',
+  'VS Code', 'Anti-gravity', 'Git', 'GitHub', 'Jenkins'
 ];
 
 export default function HomePage() {
@@ -35,7 +37,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mb-4 sm:mb-5">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="font-heading text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                    Generative AI Developer
+                    Generative AI | Prompt Design | AI-Assisted Work
                   </span>
                 </div>
                 <h1 className="font-heading text-[2.5rem] sm:text-[clamp(3rem,5.5vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.03em] text-base-950 m-0 mb-5 sm:mb-6">
@@ -122,6 +124,11 @@ export default function HomePage() {
             <div className="mb-6 sm:mb-8">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-accent" />
+                <span className="font-heading text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent">About Me</span>
+              </div>
+              <p className="text-sm sm:text-base text-base-500 leading-relaxed max-w-3xl m-0 mb-8 sm:mb-10">{resume.summary}</p>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <span className="font-heading text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent">Featured Projects</span>
               </div>
             </div>
@@ -173,27 +180,40 @@ export default function HomePage() {
           </Stagger>
         </section>
 
-        {/* Bottom Section: About + Experience + Tech Stack */}
-        <section className="max-w-7xl mx-auto px-5 sm:px-6 pb-16 sm:pb-24">
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-5">
-            {/* About Me */}
-            <div className="sm:col-span-4">
-              <FadeIn direction="up" className="h-full">
-                <div id="about" className="bg-white border border-base-200 rounded-xl sm:rounded-2xl shadow-sm overflow-hidden h-full flex flex-col">
-                  <div className="p-5 sm:p-6 flex flex-col flex-1">
-                    <h2 className="font-heading text-sm font-bold text-base-950 m-0 uppercase tracking-wider mb-3 sm:mb-4">About Me</h2>
-                    <p className="text-xs sm:text-sm text-base-500 leading-relaxed mb-4 sm:mb-5 flex-1">{resume.summary}</p>
-                    <a href="#resume" className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-accent hover:text-accent-dark transition-colors duration-200">
-                      Read more about me
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    </a>
+        {/* Certificates */}
+        <section id="certificates" className="max-w-7xl mx-auto px-5 sm:px-6 py-12 sm:py-16">
+          <FadeIn direction="up">
+            <a
+              href="https://drive.google.com/drive/folders/1LXpMbOAttOcdxnk0fpf1qfd-Imsb42TF?usp=drive_link"
+              target="_blank"
+              rel="noreferrer"
+              className="group relative block overflow-hidden rounded-xl sm:rounded-2xl border border-base-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 p-6 sm:p-8">
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                  </div>
+                  <div>
+                    <p className="font-heading text-sm sm:text-base font-bold text-base-950 m-0 mb-1">Certifications & Achievements</p>
+                    <p className="text-xs sm:text-sm text-base-400 m-0">PromptWars • Google Cloud Gen AI • IBM Bobathon • AI for All • Forage & more</p>
                   </div>
                 </div>
-              </FadeIn>
-            </div>
+                <div className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-accent text-white rounded-full text-xs sm:text-sm font-semibold shrink-0 group-hover:scale-105 transition-transform duration-200">
+                  View on Drive
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+          </FadeIn>
+        </section>
 
+        {/* Bottom Section: Experience + Tech Stack */}
+        <section className="max-w-7xl mx-auto px-5 sm:px-6 pb-16 sm:pb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {/* Experience Tabs */}
-            <div className="sm:col-span-4">
+            <div>
               <FadeIn direction="up" delay={0.1} className="h-full">
                 <div id="experience" className="bg-white border border-base-200 rounded-xl sm:rounded-2xl shadow-sm overflow-hidden h-full flex flex-col">
                   <div className="flex border-b border-base-200 overflow-x-auto">
@@ -280,7 +300,7 @@ export default function HomePage() {
             </div>
 
             {/* Tech Stack */}
-            <div className="sm:col-span-4">
+            <div>
               <FadeIn direction="up" delay={0.2} className="h-full">
                 <div className="bg-white border border-base-200 rounded-xl sm:rounded-2xl shadow-sm overflow-hidden h-full flex flex-col">
                   <div className="p-5 sm:p-6 flex flex-col flex-1">

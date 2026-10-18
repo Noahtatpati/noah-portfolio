@@ -33,44 +33,53 @@ export const resume = {
   linkedin: 'https://linkedin.com/in/noahtatpati',
   github: 'https://github.com/Noahtatpati',
   summary:
-    'Generative AI Developer with experience building AI-powered applications through internships, hackathons, and personal projects. Interested in LLM applications, AI automation, and intelligent software systems. Seeking an internship or entry-level software engineering or AI role.',
+    'BCA student with hands-on experience developing AI-assisted applications and experimenting with prompt design, conversational AI, and Generative AI tools. Project experience includes customer support, meeting summarization, and AI-powered content creation. Seeking paid roles involving AI prompting, response evaluation, AI training, or conversational AI.',
   education: [
     {
       program: 'Bachelors of Computer Application',
       institution: 'KLE Tech University',
       timeline: 'Expected 2028',
-      details: 'Semester I: 7.31 SGPA • Semester II: 7.50 SGPA • Semester III: Ongoing'
+      details: 'Semester I: 7.31 SGPA • Semester II: 7.50 SGPA'
     }
   ],
   skills: {
-    technical: ['Prompt Engineering', 'LLMs', 'AI Agents', 'Software Engineering', 'Data Analysis'],
+    aiTools: ['ChatGPT', 'Claude', 'Gemini', 'OpenCode'],
+    prompting: ['Prompt Writing', 'Instruction Design', 'Prompt Iteration'],
+    aiApplications: ['Generative AI', 'Chatbots', 'AI Assistants'],
     programming: ['Python', 'JavaScript', 'SQL'],
-    tools: ['Git', 'GitHub', 'Streamlit', 'VS Code', 'Supabase', 'MongoDB', 'SQLite']
+    developmentTools: ['VS Code', 'Git', 'GitHub', 'Jenkins']
   },
   experience: [
     {
-      role: 'Artificial Intelligence Intern program at Unlox',
-      timeline: 'Dec 2025 – Feb 2026',
-      link: 'https://github.com/Noahtatpati/formix',
-      highlights: ['Built an AI Gym Assistant.', 'Worked on prompt design and AI interaction workflows.']
-    },
-    {
-      role: 'Artificial Intelligence Intern program at IBM SkillBuild',
-      timeline: 'May 2026 – Jun 2026',
-      link: 'https://github.com/Noahtatpati/.ai-meme-poster-creator',
-      highlights: ['Developed an AI Meme & Poster Creator.', 'Applied Generative AI concepts in project development.']
+      role: 'Data Science Intern at Elevance Skills',
+      timeline: 'Sep 2026 – Oct 2026',
+      highlights: ['Completed a one-month Data Science internship.', 'Worked on data analysis and data science tasks.']
     },
     {
       role: 'Artificial Intelligence Intern at Bireena Infotech',
-      timeline: 'Apr 2026 – Jul 2026',
+      timeline: 'Mar 2026 – Jul 2026',
       link: 'https://github.com/BireenaInfotech/Bireena-Medico',
-      highlights: ['Contributed to AI-powered healthcare solutions.', 'Worked on the Bireena Medico project.', 'Assisted in developing Generative AI workflows.']
+      highlights: ['Contributed to Bireena Medico, an AI-powered healthcare project.', 'Four-month internship.', 'Worked on AI and prompting contributions.']
+    },
+    {
+      role: 'Artificial Intelligence Intern at AICTE / Edunet Foundation',
+      timeline: 'May 2026 – Jun 2026',
+      highlights: ['Completed a six-week AI internship program.', 'Program delivered with AICTE and implemented by Edunet Foundation.']
+    },
+    {
+      role: 'AI Internship / Project-Based Learning at Unlox',
+      timeline: 'Dec 2025 – Feb 2026',
+      link: 'https://github.com/Noahtatpati/formix',
+      highlights: ['Worked on an AI Gym Assistant.', 'Focused on prompt design and AI interaction workflows.']
     }
   ],
   achievements: [
-    'Google Cloud Gen AI APAC Edition 2026 – Cohort Participant',
-    'Economic Times Hackathon 2026 – Participant',
-    'Completed Forage Virtual Experience Programs from Electronic Arts, Hewlett Packard Enterprise, Walmart Global Tech, and Skyscanner.'
+    'PromptWars Virtual – Challenge 1: Submitted a Generative AI solution; received a certificate of appreciation.',
+    'Google Cloud Gen AI Academy APAC: Completed the program.',
+    'IBM Bobathon: Completed the three-hour "The Legacy Fix" project challenge.',
+    'AI for All: Completed AI Aware and AI Appreciate.',
+    'Forage Job Simulations: HPE Software Engineering, Walmart Global Tech Advanced Software Engineering, Electronic Arts Software Engineering, Skyscanner Software Engineering, Deloitte Technology, and Data Science.',
+    'Economic Times Hackathon 2026 – Participant'
   ],
   leadership: [
     'Collaborated with multidisciplinary teams during internships, hackathons, and AI projects.',
